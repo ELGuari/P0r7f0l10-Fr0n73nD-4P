@@ -1,0 +1,27 @@
+<div class="contact">
+    <div class="head">
+      <h3>Login to Your Account</h3>
+      <i class="fa fa-sign-in fa-lg"></i>
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()" novalidate>
+        <div class="form-group">
+            <label for="nombreUsuario">Username</label>
+            <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario" required="true" autocomplete>
+        </div>
+        <div class="form-group">
+            <label for="nombreUsuario">Password</label>
+            <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required="true" autocomplete>
+        </div>
+
+        <div class="mt-4 text center">
+            <button class="btn btn-outline-success btn-block" type="submit" name="login" class="button" value="Login" [disabled]="!loginForm.valid">
+            <i class="fas fa-plus-circle"></i> Login</button>
+        </div>
+    <div *ngIf="loginForm.submitted && isLoginFail" class="alert alert-danger mt-3">
+        No se pudieron comprobar los datos.
+    </div>
+
+
+
+    </form>
+</div>

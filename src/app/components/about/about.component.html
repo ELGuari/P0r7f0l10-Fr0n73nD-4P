@@ -1,0 +1,39 @@
+<div class="container about-me">
+    <div class="shadow-1-strong bg-white my-5 p-5" id="aboutme" *ngFor="let portfolio of portfolioList">
+        <div *ngIf="isAdmin">
+             <a class="btn" routerLink="person/update/{{portfolio.idPersona}}"><i class="fa fa-pencil pe-2"></i></a>
+        </div>
+    
+        <div class="about-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="h2 fw-bolder mb-4">About Me</h2>        
+                    <p>{{portfolio.about_me}}</p>
+                </div>
+                <div class="col-md-5 offset-lg-1">
+                  <div class="row mt-2">
+                    <h2 class="h2 fw-bolder mb-4">Bio</h2>
+                    <div class="col-sm-5">
+                      <div class="pb-2 fw-bolder"><i class="fa fa-calendar pe-2 text-muted"></i> Fecha de Nacimiento: </div>
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="pb-3">{{portfolio.fecha_nac}}</div>
+                    </div>
+                    <div class="col-sm-5">
+                      <div class="pb-2 fw-bolder"><i class="fa fa-envelope pe-2 text-muted"></i> Email</div>
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="pb-3">{{portfolio.email}}</div>
+                    </div>
+                    <div class="col-sm-5">
+                      <div class="pb-2 fw-bolder"><i class="fa fa-map-marker pe-2 text-muted" style="width: 24; opacity: 0.86;"></i> Address</div>
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="pb-3">{{portfolio.localization}}</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,45 @@
+<div class="contact">
+    <div class="head">
+        <h3>Edit Experience </h3>
+        <i class="fa fa-user fa-lg"></i>
+      </div>
+      <form (ngSubmit)="onUpdate()" novalidate #updateForm="ngForm">
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="person.name">
+        </div>
+        <div class="form-group">
+            <label for="surname">Lastname: </label>
+            <input type="text" class="form-control" id="surname" name="surname" [(ngModel)]="person.surname">
+        </div>
+        <div class="form-group">
+            <label for="about_me">About Me: </label>
+            <textarea type="text" rows="10" class="form-control" id="about_me" name="about_me" [(ngModel)]="person.about_me"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="profession">Title: </label>
+            <input type="text" class="form-control" id="profession" name="profession" [(ngModel)]="person.profession">
+        </div>
+        <div class="form-group">
+            <label for="localization">Location: </label>
+            <input type="text" class="form-control" id="localization" name="localization" [(ngModel)]="person.localization">
+        </div>
+        <div class="form-group">
+            <label for="url_photo">Profile picture: </label>
+            <input type="text" class="form-control" id="url_photo" name="url_photo" [(ngModel)]="person.url_photo">
+        </div>
+        <div class="form-group">
+            <label for="url_photo">Profile banner: </label>
+            <input type="text" class="form-control" id="url_banner" name="url_banner" [(ngModel)]="person.url_banner">
+        </div>
+
+        <div class="mt-2 d-grid gap-2 form-group">
+            <button class="btn btn-outline-success btn-block" [disabled]="!updateForm.valid">
+            <i class="fas fa-refresh"></i> Update
+        </button>
+            <button class="btn btn-outline-primary btn-block" routerLink="/potfolio/all">
+            <i class="fas fa-arrow-alt-circle-left"></i> Volver
+        </button>
+        </div>
+    </form>
+  </div>

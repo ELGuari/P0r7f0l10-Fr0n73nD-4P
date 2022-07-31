@@ -1,0 +1,39 @@
+<div class="contact">
+    <div class="head">
+        <h3>Edit Experience </h3>
+        <i class="fa fa-cogs fa-lg"></i>
+      </div>
+      <form (ngSubmit)="onUpdate()" novalidate #newJob="ngForm">
+        <div class="form-group">
+            <label for="jobPosition">Job Name:</label>
+            <input type="text" class="form-control" id="jobPosition" name="jobPosition" [(ngModel)]="job.jobPosition" required>
+        </div>
+        <div class="form-group">
+            <label for="jobCompany">Job Company:</label>
+            <input type="text" class="form-control" id="jobCompany" name="jobCompany" [(ngModel)]="job.jobCompany" required>
+        </div>
+        <div class="form-group">
+            <label for="jobDescription">Descripcion:</label>
+            <textarea type="text" class="form-control" id="jobDescription" name="jobDescription" [(ngModel)]="job.jobDescription" cols="30" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="jobLocalization">Localizacion:</label>
+            <input type="text" class="form-control" id="jobLocalization" name="jobLocalization" [(ngModel)]="job.jobLocalization" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_ini">Fecha Inicio:</label>
+            <input type="text" class="form-control" id="fecha_ini" name="fecha_ini" [(ngModel)]="job.fecha_ini" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_fin">Fecha Fin:</label>
+            <input type="text" class="form-control" id="fecha_fin" name="fecha_fin" [(ngModel)]="job.fecha_fin" required>
+        </div>
+        <div class="mt-4 text center">
+            <button class="btn btn-outline-success" [disabled]="!newJob.valid">
+            <i class="fas fa-plus-circle"></i> Edit </button><br>
+            <button class="btn btn-outline-primary btn-block" routerLink="/portfolio/all">
+            <i class="fas fa-arrow-alt-circle-left"></i> Back</button>
+        </div>
+
+    </form>
+  </div>

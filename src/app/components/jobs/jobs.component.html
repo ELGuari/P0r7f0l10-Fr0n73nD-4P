@@ -1,0 +1,30 @@
+<div class="container experience">
+    <div class="shadow-1-strong bg-white my-5 p-5" id="experience">
+        <div class="experience-section">
+            <h2 class="h2 mb-4">Work Experience<a class="btn" *ngIf="isAdmin" (click)="onCreateSkill()"><i class="fa fa-plus-square pe-2"></i></a></h2>
+        </div>
+    <div class=" mx-auto" >
+        <div *ngFor=" let job of jobs ">
+            <!--  Timeline-->
+      
+        <ul class="timeline">
+            
+            <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                <a class="btn" routerLink="jobs/update/{{job.id}}" *ngIf="isAdmin"><i class="fa fa-pencil pe-2"></i></a><a class="btn" (click)="delete(job.id)" *ngIf="isAdmin"><i class="fa fa-trash-o pe-2"></i></a>
+              
+                <h2 class="h5 mb-0">{{ job.jobPosition }}</h2>
+                <span class="small text-gray">{{ job.jobCompany}}</span><br>
+                <span class="small text-gray"><i class="fa fa-map-marker mr-1"></i>  {{ job.jobLocalization }}</span><br>
+                <span class="small text-gray"><i class="fa fa-clock-o mr-1"></i> Inicio: {{ job.fecha_ini }}</span><br>
+                <span class="small text-gray"><i class="fa fa-clock-o mr-1"></i> Fin: {{ job.fecha_fin }}</span>
+                <p class="text-small mt-2 font-weight-light">{{ job.jobDescription }}</p>
+            </li>  
+        </ul> 
+        <!-- End -->
+       </div>     
+    </div>
+</div>
+
+<ng-template #modalCreate let-modal>
+    <app-new-job></app-new-job>
+  </ng-template>

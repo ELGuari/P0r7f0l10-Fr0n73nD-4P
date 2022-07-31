@@ -1,0 +1,29 @@
+@media(min-width:800px) and (max-width: 850px){
+    .navbar:not(.top-nav-collapse){
+        background: rgba(0, 0, 0, 0.856) !important
+    }
+}.fa{
+    color:rgb(117, 116, 116);
+  }
+  .navbar{
+      background-color: rgba(0, 0, 0, 0.911);
+  }
+  
+  .navbar-nav{
+      align-items: center;
+  }
+  
+  
+  .page-footer,.top-nav-collapse{
+      background-color: rgba(0, 0, 0, 0.548);;
+  }
+  
+  @media only screen and (max-width: 768px){
+      .navbar{
+          background-color: rgba(0, 0, 0, 0.548);;
+      }
+  }
+
+.nav-item :hover {
+    color: whitesmoke;
+}

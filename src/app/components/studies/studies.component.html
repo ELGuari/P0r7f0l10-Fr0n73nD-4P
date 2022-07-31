@@ -1,0 +1,32 @@
+<div class="container education">
+
+    <div class="shadow-1-strong bg-white my-5 p-5" id="education">
+        <div class="education-section">
+
+            <h2 class="h2 mb-4">Education<a class="btn" *ngIf="isAdmin" (click)="onCreateStudy()"><i class="fa fa-plus-square pe-2"></i></a></h2>
+
+            <div class=" mx-auto" *ngFor=" let study of studies ">
+                    
+                <!-- Timeline -->
+              
+                <ul class="timeline">
+                    
+                    <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                        <a class="btn" *ngIf="isAdmin" routerLink="studies/update/{{study.id}} "><i class="fa fa-pencil pe-2"></i></a><a class="btn" *ngIf="isAdmin" (click)="delete(study.id) "><i class="fa fa-trash-o pe-2"></i></a>
+                        <div class="timeline-arrow"></div>
+                        <h2 class="h5 mb-0">{{ study.titulo }} </h2>
+                        <span class="small text-gray">{{ study.institutoName}}</span><br>
+                        <span class="small text-gray"><i class="fa fa-clock-o mr-1"></i> Inicio: {{ study.fecha_ini }}  </span><br>
+                        <p class="text-small mt-2 font-weight-light">{{ study.descriptionEducation }}</p>
+                        <a href="{{study.linkCertificado}}" target="_blank" class="btn fa fa-address-card-o" aria-hidden="true"></a>
+                    </li>  
+                </ul><!-- End -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #modalCreate let-modal>
+    <app-new-study></app-new-study>
+  </ng-template>

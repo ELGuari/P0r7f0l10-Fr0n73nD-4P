@@ -1,0 +1,21 @@
+<div class="contact">
+    <div class="head">
+      <h3>Add New Skill</h3>
+      <i class="fa fa-line-chart fa-lg"></i>
+    </div>
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="form-group">
+            <label for="nameSkill">Skill</label>
+            <input type="text" class="form-control" id="nameSkill" name="nameSkill" [(ngModel)]="nameSkill" required>
+        </div>
+        <div class="form-group">
+            <label for="levelSkill">Domain</label>
+            <input type="number" class="form-control" id="levelSkill" name="levelSkill" [(ngModel)]="levelSkill" required>
+        </div>
+
+        <div class="mt-4 text center">
+            <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+            <i class="fas fa-plus-circle"></i> Crear</button>
+        </div>
+    </form>
+</div>

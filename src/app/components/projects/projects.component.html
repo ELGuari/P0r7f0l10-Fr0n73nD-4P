@@ -1,0 +1,40 @@
+<h2 class="h2 fw-bold mb-4">Projects<a class="btn" *ngIf="isAdmin" (click)="onCreateProject()"><i class="fa fa-plus-square pe-2"></i></a></h2>
+            
+
+<section class="wrapper">
+  <div class="container">
+  <div class="row">
+
+
+ 
+     <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let project of projects">
+        <div class="card text-white card-has-bg click-col" style="background-image:url('{{ project.projectUrlImg }}');">
+         <img class="card-img d-none" src="{{ project.projectUrlImg }}" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+         <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body">
+                <div><h2 class="card-title mt-0 fw-bold">{{ project.projectName}}</h2><a class="btn" *ngIf="isAdmin" routerLink="projects/update/{{project.id}}"><i class="fa fa-pencil pe-2"></i></a><a class="btn" *ngIf="isAdmin" (click)="delete(project.id) "><i class="fa fa-trash pe-2"></i></a></div>
+                <h4 class="card-meta mb-2">{{ project.projectDescription }}</h4>
+                <small class="fecha"><i class="far fa-clock"></i> {{ project.fecha }}</small>
+        </div>
+        <div class="card-footer">
+            <div class="media">
+                <div class="social-buttons">
+                    <a  href="{{ project.linkRepositorio }}" class="social-buttons__button social-button social-button--github" aria-label="GitHub" target="_blank">
+                        <i class="fab fa fa-github"></i></a>
+                        <a href="{{ project.linkWeb }}" class="social-buttons__button social-button social-button--codepen" aria-label="CodePen" target="_blank">
+                            <i class="fab fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+  </div>
+</div>
+</section>
+
+<ng-template #modalCreate let-modal>
+    <app-new-project></app-new-project>
+  </ng-template>

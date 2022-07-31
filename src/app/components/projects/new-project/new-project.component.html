@@ -1,0 +1,38 @@
+<div class="contact">
+    <div class="head">
+      <h3>Add New Project </h3>
+      <i class="fa fa-apple fa-lg"></i>
+    </div>
+    <form (ngSubmit)="onCreate()" novalidate #newProject="ngForm">
+        <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input type="text" class="form-control" id="projectName" name="projectName" [(ngModel)]="projectName" required>
+        </div>
+        <div class="form-group">
+            <label for="projectDescription">Description</label>
+            <textarea type="text" class="form-control" id="projectDescription" name="projectDescription" [(ngModel)]="projectDescription" cols="30" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="projectDescription">Fecha</label>
+            <input type="text" class="form-control" id="fecha" name="fecha" [(ngModel)]="fecha" required>
+        </div>
+   
+        <div class="form-group">
+            <label for="projectUrlImg">Project Image:</label>
+            <input type="text" class="form-control" id="projectUrlImg" name="projectUrlImg" [(ngModel)]="projectUrlImg" required>
+        </div>
+        <div class="form-group">
+            <label for="linkRepositorio">Link Repositorio</label>
+            <input type="text" class="form-control" id="linkRepositorio" name="linkRepositorio" [(ngModel)]="linkRepositorio" required>
+        </div>
+        <div class="form-group">
+            <label for="linkWeb">Link Web:</label>
+            <input type="text" class="form-control" id="linkWeb" name="linkWeb" [(ngModel)]="linkWeb" required>
+        </div>
+
+        <div class="mt-4 text center">
+            <button class="btn btn-outline-success" [disabled]="!newProject.valid">
+            <i class="fas fa-plus-circle"></i> Crear</button>
+        </div>
+    </form>
+  </div>

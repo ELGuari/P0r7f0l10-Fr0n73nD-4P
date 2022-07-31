@@ -1,0 +1,37 @@
+<div class="contact">
+    <div class="head">
+      <h3>Add New Study </h3>
+      <i class="fa fa-graduation-cap fa-lg"></i>
+    </div>
+    <form (ngSubmit)="onCreate()" novalidate #newStudy="ngForm">
+        <div class="form-group">
+            <label for="titulo">Title</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+        </div>
+        <div class="form-group">
+            <label for="institutoName">Institute</label>
+            <input type="text" class="form-control" id="institutoName" name="institutoName" [(ngModel)]="institutoName" required>
+        </div>
+        <div class="form-group">
+            <label for="descriptionEducation">Descripcion</label>
+            <textarea type="text" class="form-control" id="descriptionEducation" name="descriptionEducation" [(ngModel)]="descriptionEducation" cols="30" rows="5"></textarea>
+
+        </div>
+        <div class="form-group">
+            <label for="linkCertificado">Certificado</label>
+            <input type="text" class="form-control" id="linkCertificado" name="linkCertificado" [(ngModel)]="linkCertificado" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_ini">Fecha ini:</label>
+            <input type="text" class="form-control" id="fecha_ini" name="fecha_ini" [(ngModel)]="fecha_ini" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_fin">Fecha fin:</label>
+            <input type="text" class="form-control" id="fecha_fin" name="fecha_fin" [(ngModel)]="fecha_fin" required>
+        </div>
+        <div class="mt-4 text center">
+            <button class="btn btn-outline-success" [disabled]="!newStudy.valid">
+            <i class="fas fa-plus-circle"></i> Crear</button>
+        </div>
+    </form>
+  </div>

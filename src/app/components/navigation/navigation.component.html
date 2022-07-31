@@ -1,0 +1,36 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa" target="_blank">
+            <img src="../../../assets/LogoAP-white.png" alt="" width="100" height="60" class="d-inline-block align-text-center">
+            <strong>#YoProgramo</strong>
+            
+          </a>
+      <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">          
+        </ul>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-dark" href="https://github.com/ELGuari" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect waves-dark" href="https://www.linkedin.com/in/emir-luciano-guarino/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+            </li>
+          </ul> 
+
+          <ul class=" navbar-nav d-flex">
+            <a href="#" class="btn btn-outline-light btn-lg shadow-sm mt-1 me-3" (click)="onLogin()" routerLinkActive="active" *ngIf="!isLogged">Login</a>
+          </ul>
+          <ul class="navbar-nav d-flex" *ngIf="isLogged" (click)="onLogOut()">
+            <a href="#" class="btn btn-outline-light btn-lg shadow-sm mt-1 me-3" style="cursor: pointer">{{this.nombreUsuario}} Logout</a>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <ng-template #modalLogin let-modal>
+    <app-login></app-login>
+  </ng-template>

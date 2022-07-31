@@ -1,0 +1,23 @@
+.about-me{
+    margin-top: 5rem ;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25), 0 3px 10px 0 rgba(0,0,0,.2)!important;
+}
+
+h2{
+    font-family:'Montserrat', sans-serif;
+}
+
+p{
+    font-family:'Open Sans', sans-serif;
+}
+
+.pb-3{
+    font-family:'Montserrat', sans-serif;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    float: right;
+}
